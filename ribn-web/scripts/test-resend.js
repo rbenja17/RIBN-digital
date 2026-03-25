@@ -1,6 +1,13 @@
+require('dotenv').config({ path: '.env.local' });
 const { Resend } = require('resend');
 
-const resend = new Resend('re_7nRtRS1Z_BMJ8gPbGdeti3zo4aXqw5KCB');
+const apiKey = process.env.RESEND_API_KEY;
+if (!apiKey) {
+  console.error('ERROR: RESEND_API_KEY is not set. Create a .env.local file with RESEND_API_KEY=your_key');
+  process.exit(1);
+}
+
+const resend = new Resend(apiKey);
 
 async function test() {
   try {
