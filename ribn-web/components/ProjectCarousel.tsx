@@ -8,7 +8,8 @@ import ProjectCard from "./ProjectCard";
 interface Project {
   title: string;
   description: string;
-  imageSrc: string;
+  imageSrc?: string;
+  videoSrc?: string;
   href?: string;
 }
 
@@ -94,6 +95,7 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
                 title={project.title}
                 description={project.description}
                 imageSrc={project.imageSrc}
+                videoSrc={project.videoSrc}
                 href={project.href}
                 mockupType="browser"
               />

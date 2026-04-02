@@ -132,24 +132,29 @@ export default function Home() {
           <ScrollReveal>
             <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 mb-16">
               <div>
-                <p className="text-xs uppercase tracking-[0.3em] text-zinc-600 mb-4">
+                <p className="text-xs uppercase tracking-[0.3em] text-cyan-400/80 mb-4 font-medium flex items-center gap-3">
+                  <span className="w-8 h-[1px] bg-cyan-400/50" />
                   Proyectos Seleccionados
                 </p>
                 <h2
-                  className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-[-0.03em] text-white"
+                  className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-[-0.03em] text-white mb-6"
                   style={{
                     fontFamily: "var(--font-space-grotesk), sans-serif",
                   }}
                 >
                   The Work
                 </h2>
+                <p className="text-zinc-400 max-w-lg mb-4 text-sm leading-relaxed">
+                  Mostramos aquí una selección inicial. Tenemos muchos más casos de estudio,
+                  incluyendo menús digitales y sistemas B2B avanzados, en nuestra galería completa.
+                </p>
               </div>
               <Link
                 href="/trabajos"
-                className="text-sm text-zinc-500 hover:text-white transition-colors duration-300 flex items-center gap-2"
+                className="inline-flex border border-white/10 items-center gap-3 bg-white/5 hover:bg-white/10 backdrop-blur-sm text-white px-6 py-3 rounded-full text-sm font-medium transition-all"
               >
-                Ver todos los proyectos
-                <ArrowRight size={14} />
+                Explorar todos los proyectos
+                <ArrowRight size={16} />
               </Link>
             </div>
           </ScrollReveal>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
@@ -9,7 +9,8 @@ import Image from "next/image";
 interface ProjectCardProps {
   title: string;
   description: string;
-  imageSrc: string;
+  imageSrc?: string;
+  videoSrc?: string;
   href?: string;
   scrollDistance?: string;
   scrollDuration?: number;
@@ -21,6 +22,7 @@ export default function ProjectCard({
   title,
   description,
   imageSrc,
+  videoSrc,
   href,
   scrollDistance = "-90%",
   scrollDuration = 14,
@@ -28,6 +30,21 @@ export default function ProjectCard({
   className = "",
 }: ProjectCardProps) {
   const [isHovered, setIsHovered] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+    if (videoRef.current) {
+      videoRef.current.play().catch(() => {});
+    }
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+    if (videoRef.current) {
+      videoRef.current.pause();
+    }
+  };
 
   if (mockupType === "mobile") {
     return (
@@ -36,6 +53,7 @@ export default function ProjectCard({
           title,
           description,
           imageSrc,
+          videoSrc,
           scrollDistance,
           scrollDuration,
           className,
@@ -68,8 +86,10 @@ export default function ProjectCard({
           {/* Viewport — hover is detected HERE (this div never moves) */}
           <div
             className="flex-1 overflow-hidden relative"
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            onTouchStart={handleMouseEnter}
+            onTouchEnd={handleMouseLeave}
           >
             <motion.div
               className="w-full origin-top"
@@ -84,20 +104,31 @@ export default function ProjectCard({
                   : { duration: 7, ease: "easeOut" }
               }
             >
-              <Image
-                src={imageSrc}
-                alt={title}
-                width={1400}
-                height={1050}
-                className="w-full h-auto block"
-                priority
-              />
+              {videoSrc ? (
+                <video
+                  ref={videoRef}
+                  src={videoSrc}
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-auto block object-cover"
+                />
+              ) : (
+                <Image
+                  src={imageSrc || ""}
+                  alt={title}
+                  width={1400}
+                  height={1050}
+                  className="w-full h-auto block"
+                  priority
+                />
+              )}
             </motion.div>
 
             {/* Top fade */}
             <div className="absolute top-0 inset-x-0 h-6 bg-gradient-to-b from-[#050505] to-transparent pointer-events-none z-10" />
             {/* Bottom fade — hides the white edge */}
-            <div className="absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-[#050505] to-transparent pointer-events-none z-10" />
+            <div className={`absolute bottom-0 inset-x-0 ${videoSrc ? 'h-4' : 'h-16'} bg-gradient-to-t from-[#050505] to-transparent pointer-events-none z-10`} />
           </div>
 
           {/* Hover tint */}
@@ -129,11 +160,27 @@ function MobileCard({
   title,
   description,
   imageSrc,
+  videoSrc,
   scrollDistance,
   scrollDuration,
   className,
 }: Omit<ProjectCardProps, "mockupType">) {
   const [isHovered, setIsHovered] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+    if (videoRef.current) {
+      videoRef.current.play().catch(() => {});
+    }
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+    if (videoRef.current) {
+      videoRef.current.pause();
+    }
+  };
 
   return (
     <div
@@ -151,8 +198,10 @@ function MobileCard({
             {/* Scrollable screen — hover on the viewport container */}
             <div
               className="overflow-hidden h-[320px] relative"
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+              onTouchStart={handleMouseEnter}
+              onTouchEnd={handleMouseLeave}
             >
               <motion.div
                 className="w-full origin-top"
@@ -167,14 +216,25 @@ function MobileCard({
                     : { duration: 7, ease: "easeOut" }
                 }
               >
-                <Image
-                  src={imageSrc}
-                  alt={title}
-                  width={600}
-                  height={1000}
-                  className="w-full h-auto block"
-                  priority
-                />
+                {videoSrc ? (
+                  <video
+                    ref={videoRef}
+                    src={videoSrc}
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-auto block object-cover"
+                  />
+                ) : (
+                  <Image
+                    src={imageSrc || ""}
+                    alt={title}
+                    width={600}
+                    height={1000}
+                    className="w-full h-auto block"
+                    priority
+                  />
+                )}
               </motion.div>
             </div>
           </div>

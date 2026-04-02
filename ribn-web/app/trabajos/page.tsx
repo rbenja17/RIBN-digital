@@ -269,6 +269,117 @@ export default function TrabajosPage() {
                 </div>
               ))}
             </div>
+            <p className="text-sm text-zinc-600/60 text-center mb-32 flex items-center justify-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-green-500/50"></span>
+              Métricas auditadas y verificadas con Google PageSpeed Insights
+            </p>
+          </ScrollReveal>
+
+          {/* Project 03 — Carta Terraza (Full width) */}
+          <ScrollReveal>
+            <div id="terraza" className="mb-8 flex items-end justify-between scroll-mt-32">
+              <div className="flex items-center gap-4">
+                <span
+                  className="text-5xl md:text-6xl font-bold text-white/[0.04]"
+                  style={{ fontFamily: "var(--font-space-grotesk), sans-serif" }}
+                >
+                  03
+                </span>
+                <div>
+                  <h2
+                    className="text-2xl md:text-3xl font-bold text-white tracking-[-0.02em]"
+                    style={{ fontFamily: "var(--font-space-grotesk), sans-serif" }}
+                  >
+                    Carta Terraza
+                  </h2>
+                  <p className="text-sm text-zinc-600 mt-1">
+                    Menú Digital Premium B2B
+                  </p>
+                </div>
+              </div>
+              <div className="hidden md:flex flex-wrap gap-2">
+                {[
+                  "Animaciones GSAP",
+                  "Arquitectura Headless",
+                  "Google Sheets CMS",
+                ].map((tag) => (
+                  <span
+                    key={tag}
+                    className="text-[11px] text-zinc-500 border border-white/[0.06] px-3 py-1.5 rounded-full"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal delay={0.1}>
+            <ProjectCard
+              title="Carta Terraza"
+              description="Diseño Costero · CMS Dinámico vía Google Sheets"
+              videoSrc="/projects/terraza.mp4"
+              mockupType="browser"
+              scrollDistance="0%"
+            />
+          </ScrollReveal>
+
+          {/* Description below card */}
+          <ScrollReveal delay={0.15}>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
+              <div>
+                <p className="text-[11px] uppercase tracking-[0.2em] text-zinc-600 mb-3">
+                  El Desafío
+                </p>
+                <p className="text-base text-zinc-400 leading-relaxed">
+                  Terraza Resto necesitaba digitalizar su menú físico, pero los
+                  clásicos PDF no transmitían la calidad premium ("Coastal Light Mode")
+                  de su marca. Además, la fluctuación de productos y precios requería
+                  al cliente tener autonomía total sobre todo el inventario.
+                </p>
+              </div>
+              <div>
+                <p className="text-[11px] uppercase tracking-[0.2em] text-zinc-600 mb-3">
+                  La Solución
+                </p>
+                <p className="text-base text-zinc-400 leading-relaxed">
+                  Desarrollamos un menú digital sumamente fluido impulsado con
+                  animaciones de GSAP, y lo conectamos a una arquitectura headless
+                  con un parser especial basado en Google Sheets. Esto le brinda a la marca
+                  una plataforma web de lujo completamente autogestionable y sin costos fijos.
+                </p>
+              </div>
+            </div>
+          </ScrollReveal>
+
+          {/* Metrics — Terraza */}
+          <ScrollReveal delay={0.2}>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 mb-4">
+              {[
+                { label: "Rendimiento", value: 100, suffix: "/100" },
+                { label: "Interactividad", value: 99, suffix: "/100" },
+                { label: "CMS Sync", value: 0.8, suffix: "s", isDecimal: true },
+              ].map((metric) => (
+                <div
+                  key={metric.label}
+                  className="text-center p-6 rounded-xl border border-white/[0.04] bg-white/[0.01]"
+                >
+                  <p
+                    className="text-3xl md:text-5xl font-bold text-white mb-2"
+                    style={{ fontFamily: "var(--font-space-grotesk), sans-serif" }}
+                  >
+                    {metric.isDecimal ? (
+                      <>{metric.value}{metric.suffix}</>
+                    ) : (
+                      <AnimatedCounter value={metric.value} suffix={metric.suffix} />
+                    )}
+                  </p>
+                  <p className="text-xs text-zinc-600 uppercase tracking-[0.15em]">
+                    {metric.label}
+                  </p>
+                </div>
+              ))}
+            </div>
             <p className="text-sm text-zinc-600/60 text-center mb-8 flex items-center justify-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-green-500/50"></span>
               Métricas auditadas y verificadas con Google PageSpeed Insights
