@@ -121,6 +121,7 @@ export default function ProjectCard({
                   height={1050}
                   className="w-full h-auto block"
                   priority
+                  unoptimized
                 />
               )}
             </motion.div>
@@ -233,6 +234,7 @@ function MobileCard({
                     height={1000}
                     className="w-full h-auto block"
                     priority
+                    unoptimized
                   />
                 )}
               </motion.div>

@@ -81,6 +81,17 @@ export default function Footer() {
                 </a>
               </li>
               <li>
+                <a
+                  href="https://www.instagram.com/ribn.digital/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center gap-2 text-zinc-400 hover:text-white transition-colors duration-300"
+                >
+                  Instagram
+                  <ArrowUpRight className="w-3.5 h-3.5 opacity-0 -translate-y-1 translate-x-1 group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all duration-300 text-cyan-400" />
+                </a>
+              </li>
+              <li>
                 <p className="text-zinc-600">
                   Buenos Aires, Argentina<br />
                   <span className="text-zinc-700 text-sm">Remote Worldwide</span>

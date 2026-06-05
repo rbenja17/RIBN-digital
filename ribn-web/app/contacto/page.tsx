@@ -1,3 +1,4 @@
+import { ArrowRight } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
 import ScrollReveal from "@/components/ScrollReveal";
 
@@ -84,6 +85,21 @@ export default function ContactoPage() {
                         Trabajamos de forma remota
                       </span>
                     </p>
+                  </div>
+
+                  <div>
+                    <p className="text-[11px] uppercase tracking-[0.2em] text-zinc-600 mb-2">
+                      Redes Sociales
+                    </p>
+                    <a
+                      href="https://www.instagram.com/ribn.digital/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group flex items-center gap-2 text-zinc-400 hover:text-white transition-colors duration-300"
+                    >
+                      @ribn.digital
+                      <ArrowRight className="w-3.5 h-3.5 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-cyan-400" />
+                    </a>
                   </div>
                 </div>
               </ScrollReveal>
