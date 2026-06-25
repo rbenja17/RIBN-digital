@@ -49,6 +49,45 @@ export default function ContactForm() {
 
       <div>
         <label
+          htmlFor="budget"
+          className="block text-[11px] uppercase tracking-[0.2em] text-zinc-600 mb-3"
+        >
+          Presupuesto estimado
+        </label>
+        <div className="relative">
+          <select
+            id="budget"
+            name="budget"
+            required
+            defaultValue=""
+            className="w-full bg-transparent border-b border-[#1f1f1f] pb-3 text-white text-base focus:outline-none focus:border-zinc-400 transition-colors duration-300 appearance-none rounded-none cursor-pointer"
+          >
+            <option value="" disabled className="bg-[#0a0a0a] text-zinc-500">
+              Seleccioná un rango
+            </option>
+            <option value="150-300" className="bg-[#0a0a0a] text-white">
+              $150 a $300 USD
+            </option>
+            <option value="300-800" className="bg-[#0a0a0a] text-white">
+              $300 a $800 USD
+            </option>
+            <option value="800-1500" className="bg-[#0a0a0a] text-white">
+              $800 a $1500 USD
+            </option>
+            <option value="+1500" className="bg-[#0a0a0a] text-white">
+              +$1500 USD
+            </option>
+          </select>
+          <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-zinc-500 pb-3">
+            <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+              <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <label
           htmlFor="project"
           className="block text-[11px] uppercase tracking-[0.2em] text-zinc-600 mb-3"
         >

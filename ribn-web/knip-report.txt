@@ -1,0 +1,7 @@
+﻿[93m[4mUnused files[24m[39m (2)
+scripts/optimize-images.js: scripts/optimize-images.js
+scripts/test-resend.js: scripts/test-resend.js
+[93m[4mUnused devDependencies[24m[39m (1)
+package.json: dotenv
+[93m[4mUnlisted dependencies[24m[39m (1)
+postcss.config.mjs: postcss

@@ -10,6 +10,7 @@ export default function Footer() {
     { label: "Home", href: "/" },
     { label: "Trabajos", href: "/trabajos" },
     { label: "Método", href: "/metodo" },
+    { label: "Blog", href: "/blog" },
     { label: "Contacto", href: "/contacto" },
   ];
 
@@ -66,6 +67,17 @@ export default function Footer() {
                   className="group flex items-center gap-2 text-zinc-400 hover:text-white transition-colors duration-300"
                 >
                   hola@ribn.digital
+                  <ArrowUpRight className="w-3.5 h-3.5 opacity-0 -translate-y-1 translate-x-1 group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all duration-300 text-cyan-400" />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://wa.me/5491178212338"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center gap-2 text-zinc-400 hover:text-white transition-colors duration-300"
+                >
+                  WhatsApp
                   <ArrowUpRight className="w-3.5 h-3.5 opacity-0 -translate-y-1 translate-x-1 group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all duration-300 text-cyan-400" />
                 </a>
               </li>

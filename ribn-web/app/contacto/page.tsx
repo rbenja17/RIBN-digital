@@ -67,6 +67,21 @@ export default function ContactoPage() {
 
                   <div>
                     <p className="text-[11px] uppercase tracking-[0.2em] text-zinc-600 mb-2">
+                      WhatsApp
+                    </p>
+                    <a
+                      href="https://wa.me/5491178212338"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group flex items-center gap-2 text-white hover:text-cyan-400 transition-colors duration-300"
+                    >
+                      +54 9 11 7821-2338
+                      <ArrowRight className="w-3.5 h-3.5 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-cyan-400" />
+                    </a>
+                  </div>
+
+                  <div>
+                    <p className="text-[11px] uppercase tracking-[0.2em] text-zinc-600 mb-2">
                       Respuesta
                     </p>
                     <p className="text-zinc-400">
