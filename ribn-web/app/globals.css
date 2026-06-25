@@ -12,10 +12,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
 ::selection {
-  background: rgba(138, 43, 226, 0.35);
+  background: #8a2be2;
   color: #ffffff;
 }
+
 
 /* ── Film Grain Overlay ── */
 .grain-overlay {
